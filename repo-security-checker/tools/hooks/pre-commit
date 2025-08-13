@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Simple pre-commit hook: scan repo for secrets before committing
+
+TOOLS_DIR="tools"
+SCANNER="$TOOLS_DIR/scan_repo.py"
+
+# Run scanner
+if [ -f "$SCANNER" ]; then
+  echo "[pre-commit] Running security scan..."
+  python3 "$SCANNER"
+  STATUS=$?
+  if [ $STATUS -ne 0 ]; then
+    echo "[pre-commit] Security scan failed. Commit aborted."
+    exit 1
+  fi
+else
+  echo "[pre-commit] Scanner not found at $SCANNER (skipping)."
+fi
