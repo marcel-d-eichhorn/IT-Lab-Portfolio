@@ -40,7 +40,7 @@ Ziel ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu verwalten u
 - Budget 5€
 - ![Screenshot Budget](img/budget.png)
 
-## 4. Aufröumen
+## 4. Aufräumen
 - Ressourcen gelöscht
 
 ## 5. Fazit
