@@ -1,3 +1,12 @@
-# Azure Basics: RG, VM, Storage
+# Azure Basics Lab
+Dieses Lab vermittelt grundlegende Kenntnisse im Umgang mit Microsoft Azure:
+- Azure-Portal
+- Resource Groups
+- Storage Accounts
+- Virtuelle Maschinen
+- Benutzerverwaltung
+- Kostenkontrolle
 
-Template siehe ROOT-README.
+**Zielgruppe:** Einsteiger in Cloud-Administration
+
+**Ergebnis:** Verständnis der Azure-Basisdienste + GitHub-Dokumentation
