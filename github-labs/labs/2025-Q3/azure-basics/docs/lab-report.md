@@ -84,7 +84,7 @@ Ziel dieses Labs ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu
 ---
 
 ## 4. Aufräumen
-- Alle erstellten Ressourcen (VM, Storage Account, Resource Group) wurden gelöscht, um Kosten zu vermeiden.
+Alle erstellten Ressourcen (VM, Storage Account, Resource Group) wurden gelöscht, um Kosten zu vermeiden.
 
 ---
 
