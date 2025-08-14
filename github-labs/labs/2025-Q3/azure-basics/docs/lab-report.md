@@ -17,7 +17,7 @@ Ziel ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu verwalten u
 
 ![Azure Portal Menü](img/portal-menue.png)
 
-![Azure Portal Cloudmenü](img/portal-cloud-menue.png)
+![Azure Portal Cloudmenü](img/portal-cloudmenue.png)
 
 ---
 
