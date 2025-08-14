@@ -100,5 +100,5 @@ Ich habe gelernt:
 - Die Menüstruktur von Azure ist umfangreich, aber logisch aufgebaut, wenn man die Suchfunktion nutzt.  
 - Das Kostenlimit ist schnell gesetzt, allerdings sollte man die Standardregion bewusst wählen, um unnötige Kosten zu vermeiden.  
 
-**Dauer:** ca. X Stunden  
+**Dauer:** ca. 1,5 Stunden  
 **Schwierigkeit:** Einsteigerfreundlich, erfordert aber sorgfältiges Arbeiten bei der Konfiguration.  
