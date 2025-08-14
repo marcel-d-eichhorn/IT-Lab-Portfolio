@@ -15,9 +15,9 @@ Ziel ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu verwalten u
 
 ![Azure Portal Startseite](img/portal-start.png)
 
-![Azure Portal Menü](img/portal-menü.png)
+![Azure Portal Menü](img/portal-menue.png)
 
-![Azure Portal Cloudmenü](img/portal-cloud-menü.png)
+![Azure Portal Cloudmenü](img/portal-cloud-menue.png)
 
 ---
 
@@ -25,7 +25,7 @@ Ziel ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu verwalten u
 - Name: rg-azure-basics
 - Region: West Europe
 
-![Azure Resource Group Menü](img/resource-group-menü.png)
+![Azure Resource Group Menü](img/resource-group-menue.png)
 
 ![Azure Resource Group Übersicht](img/resource-group.png)
 
@@ -33,7 +33,7 @@ Ziel ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu verwalten u
 
 ---
 
-### Schritt 3 - Storage Account
+### Schritt 3 – Storage Account
 - Name: staazurebasics0001
 - Standard Performance, LRS
 
@@ -41,15 +41,15 @@ Ziel ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu verwalten u
 
 ---
 
-### Schritt 4 - VM-Erstellung
+### Schritt 4 – VM-Erstellung
 - Ubuntu 22.04 LTS, B1s,
 -Authentifizierung: SSH
 
-![Azure VM Übersicht](img/vm-übersicht.png)
+![Azure VM Übersicht](img/vm-uebersicht.png)
 
 ---
 
-### Schritt 5 - Benutzerverwaltung
+### Schritt 5 – Benutzerverwaltung
 - Benutzer: `labuser1` 
 - Rolle: Reader
 
@@ -57,7 +57,7 @@ Ziel ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu verwalten u
 
 ---
 
-### Schritt 6 - Kostenkontrolle
+### Schritt 6 – Kostenkontrolle
 - Budget: 5 USD (in Azure-Portal als Dollar angezeigt)
 - Abrechung monatlich
 
