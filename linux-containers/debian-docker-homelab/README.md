@@ -1,10 +1,10 @@
 # Debian Docker Homelab
 
-Praxisprojekt zum Aufbau eines kompakten Linux-Servers für containerisierte Dienste, Medienverwaltung und zentrale Administration.
+Praxisprojekt zum Aufbau eines kompakten Linux-Servers für containerisierte Dienste und zentrale Administration.
 
 ## Ziel
 
-Ziel des Projekts ist ein wartbarer Homelab-Server auf wiederverwendeter Business-Hardware. Der Fokus liegt nicht nur auf dem Betrieb einzelner Anwendungen, sondern auf einer sauberen Basis für:
+Ziel des Projekts ist ein wartbarer Homelab-Server auf wiederverwendeter Business-Hardware. Der Fokus liegt nicht auf einzelnen Anwendungen, sondern auf einer sauberen Basis für:
 
 - Linux-Administration
 - Docker und Docker Compose
@@ -19,8 +19,8 @@ Ziel des Projekts ist ein wartbarer Homelab-Server auf wiederverwendeter Busines
 - **Betriebssystem:** Debian 13
 - **Container Runtime:** Docker Engine
 - **Orchestrierung:** Docker Compose
-- **Remote Administration:** Cockpit
-- **Host:** wiederverwendetes Business-Notebook
+- **Remote Administration:** Web- und Shell-basierte Verwaltung
+- **Host:** wiederverwendete Business-Hardware
 - **Hardwarebeschleunigung:** integrierte GPU über `/dev/dri`
 
 ## Architektur
@@ -38,47 +38,44 @@ Ziel des Projekts ist ein wartbarer Homelab-Server auf wiederverwendeter Busines
                   │                                   │
           ┌───────┴────────┐            ┌─────────────┴─────────────┐
           │                │            │                           │
-     Konfiguration      Medien      Media Services            Management
-     /opt/...           /srv/...    + Indexer/Tools           + Updates
+     Konfiguration       Daten      Application Services       Management
+     /opt/...           /srv/...    interne Container          Wartung
 ```
 
-Interne IP-Adressen und Zugriffsdaten werden in der öffentlichen Dokumentation bewusst nicht veröffentlicht.
+Interne IP-Adressen, konkrete Anwendungen und Zugriffsdaten werden in der öffentlichen Dokumentation bewusst nicht veröffentlicht.
 
 ## Containerisierte Dienste
 
-Der Stack umfasst unter anderem:
+Die produktiven Container werden in der öffentlichen Version nur nach technischen Rollen beschrieben:
 
-- Jellyfin
-- Sonarr
-- Radarr
-- Lidarr
-- Prowlarr
-- Bazarr
-- qBittorrent
-- Portainer
-- Watchtower
+- Application Services
+- Management- und Monitoring-Komponenten
+- Update-/Maintenance-Komponenten
+- optionale Netzwerkdienste
 
-Ein VPN-Container wurde ebenfalls getestet, aufgrund eines Restart-Loops aber zunächst aus dem produktiven Stack genommen und als eigener Troubleshooting-Punkt behandelt.
+Konkrete Produktnamen, interne Ports und private Service-Zuordnungen bleiben absichtlich außerhalb des öffentlichen Repositories.
 
 ## Technische Schwerpunkte
 
 ### Persistente Daten
 
-Anwendungsdaten und Medien liegen getrennt vom Container-Lifecycle. Dadurch können Container aktualisiert oder ersetzt werden, ohne ihre Konfiguration oder Nutzdaten zu verlieren.
+Anwendungsdaten liegen getrennt vom Container-Lifecycle. Dadurch können Container aktualisiert oder ersetzt werden, ohne ihre Konfiguration oder Nutzdaten zu verlieren.
 
 ### Hardwarebeschleunigung
 
-Jellyfin erhält Zugriff auf die integrierte GPU des Hosts:
+Ein dafür vorgesehener Container erhält Zugriff auf die integrierte GPU des Hosts:
 
 ```text
 /dev/dri → Container
 ```
 
-Damit kann Video-Transcoding hardwarebeschleunigt erfolgen, statt ausschließlich CPU-Ressourcen zu verwenden.
+Damit können unterstützte Workloads hardwarebeschleunigt ausgeführt werden, statt ausschließlich CPU-Ressourcen zu verwenden.
 
 ### Remote Administration
 
-Cockpit dient als zusätzliche Weboberfläche für typische Host-Aufgaben wie:
+Der Host wird sowohl per Shell als auch über eine zusätzliche Weboberfläche administriert.
+
+Typische Aufgaben:
 
 - Systemstatus
 - Storage
@@ -105,4 +102,4 @@ Die eigentliche Container-Konfiguration bleibt Git-/Compose-orientiert.
 
 ## Status
 
-Das Homelab wird laufend erweitert. Compose-Dateien und Beispielkonfigurationen werden erst dann veröffentlicht, wenn sie aus der realen Umgebung übernommen, bereinigt und auf Secrets geprüft wurden.
+Das Homelab wird laufend erweitert. Compose-Dateien und Beispielkonfigurationen werden nur in bereinigter Form veröffentlicht. Private Service-Namen, interne Adressierung und Credentials bleiben bewusst außerhalb des öffentlichen Portfolios.
