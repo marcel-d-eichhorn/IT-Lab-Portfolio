@@ -16,6 +16,13 @@ Ich befinde mich in der Umschulung zum **Fachinformatiker für Systemintegration
 
 ## Featured Projects
 
+### 🛡️ Sophos Firewall Homelab
+Modulare Netzwerkarchitektur mit separatem Modem, zentraler Firewall, abstrahierten Netzwerkzonen und dokumentiertem Hardware-Troubleshooting.
+
+**Technologien:** Sophos Firewall · Routing · Firewall Rules · Network Design · Troubleshooting
+
+[Projekt öffnen →](networking/sophos-firewall-homelab/)
+
 ### 🐧 Debian Docker Homelab
 Containerisierter Homelab-Server auf Debian mit persistenten Daten, GPU-Passthrough und dokumentiertem Storage-Troubleshooting.
 
@@ -42,7 +49,6 @@ Grundlegendes Azure-Lab mit Resource Group, Storage Account, virtueller Maschine
 Folgende Projekte werden schrittweise dokumentiert und ergänzt:
 
 - **Wazuh SIEM & Detection Engineering**
-- **Sophos Firewall & Netzwerkarchitektur**
 - **Docker Swarm & High Availability**
 - **Dell PowerEdge / RAID / Serveradministration**
 - **Sysadmin Troubleshooting Case Studies**
@@ -56,6 +62,8 @@ IT-Lab-Portfolio/
 │   └── azure-basics/
 ├── linux-containers/
 │   └── debian-docker-homelab/
+├── networking/
+│   └── sophos-firewall-homelab/
 ├── security/
 │   └── repo-security-checker/
 ├── README.md
