@@ -49,7 +49,6 @@ Grundlegendes Azure-Lab mit Resource Group, Storage Account, virtueller Maschine
 Folgende Projekte werden schrittweise dokumentiert und ergänzt:
 
 - **Wazuh SIEM & Detection Engineering**
-- **Docker Swarm & High Availability**
 - **Dell PowerEdge / RAID / Serveradministration**
 - **Sysadmin Troubleshooting Case Studies**
 - **PowerShell- und Python-Automation**
