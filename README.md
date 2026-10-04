@@ -17,9 +17,9 @@ Ich befinde mich in der Umschulung zum **Fachinformatiker für Systemintegration
 ## Featured Projects
 
 ### 🐧 Debian Docker Homelab
-Containerisierter Homelab-Server auf Debian mit persistenten Daten, Media-Services, GPU-Passthrough und dokumentiertem Storage-Troubleshooting.
+Containerisierter Homelab-Server auf Debian mit persistenten Daten, GPU-Passthrough und dokumentiertem Storage-Troubleshooting.
 
-**Technologien:** Debian · Docker · Docker Compose · Cockpit · Jellyfin · Linux Storage · /dev/dri
+**Technologien:** Debian · Docker · Docker Compose · Linux Storage · /dev/dri
 
 [Projekt öffnen →](linux-containers/debian-docker-homelab/)
 
@@ -68,6 +68,7 @@ IT-Lab-Portfolio/
 
 - keine produktiven Zugangsdaten oder Secrets
 - interne Systeme und Umgebungen werden anonymisiert
+- konkrete private Anwendungen werden nur abstrahiert dokumentiert
 - Screenshots werden vor Veröffentlichung geprüft
 - Entscheidungen und Troubleshooting werden nachvollziehbar dokumentiert
 - Konfigurationen werden möglichst reproduzierbar beschrieben
