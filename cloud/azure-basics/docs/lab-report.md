@@ -1,104 +1,123 @@
 # Lab Report – Azure Basics
 
 ## 1. Ziel
-Ziel dieses Labs ist es, grundlegende Azure-Ressourcen zu erstellen, Benutzer zu verwalten und die Kostenkontrolle zu testen.
 
----
+In diesem Lab wurden grundlegende Azure-Ressourcen erstellt, verwaltet und anschließend wieder entfernt. Der Schwerpunkt lag auf einem typischen Einstieg in Cloud-Administration: Ressourcen strukturieren, Zugriffe steuern, eine virtuelle Maschine bereitstellen und Kosten im Blick behalten.
 
 ## 2. Voraussetzungen
-- Azure-Konto  
-- GitHub-Repository für die Dokumentation  
 
----
+- Azure-Konto
+- Zugriff auf das Azure Portal
+- grundlegendes Verständnis von Benutzerkonten, Rollen und virtuellen Maschinen
 
 ## 3. Durchführung
 
-### Schritt 1 – Login & Orientierung
-**Ziel:** Zugang zum Azure-Portal und erste Orientierung in der Benutzeroberfläche.
+### 3.1 Orientierung im Azure Portal
 
-1. Aufruf des Portals: [https://portal.azure.com](https://portal.azure.com)  
-2. Identifikation der wichtigsten Bereiche: Dashboard, Suchleiste, Ressourcenübersicht.
+Nach dem Login wurden die wichtigsten Bereiche des Portals identifiziert:
 
-<img src="img/portal-start.png" alt="Azure Portal Startseite" width="800">  
+- globale Suche
+- Ressourcenübersicht
+- Hauptnavigation
+- Cloud-Dienste
 
-<img src="img/portal-menue.png" alt="Azure Portal Hauptmenü" width="800">  
+<img src="img/portal-start.png" alt="Azure Portal Startseite" width="800">
 
-<img src="img/portal-cloudmenue.png" alt="Azure Cloudmenü" width="800">  
+<img src="img/portal-menue.png" alt="Azure Portal Hauptmenü" width="800">
 
----
+<img src="img/portal-cloudmenue.png" alt="Azure Cloudmenü" width="800">
 
-### Schritt 2 – Resource Group
-**Ziel:** Anlegen einer logischen Gruppierung für Ressourcen, um Verwaltung und Kostenkontrolle zu erleichtern.
+### 3.2 Resource Group
 
-- Name: `rg-azure-basics`  
-- Region: West Europe
+Für das Lab wurde eine eigene Resource Group angelegt.
 
-<img src="img/resource-group-menue.png" alt="Azure Resource Group Menü" width="800">  
+- **Name:** `rg-azure-basics`
+- **Region:** West Europe
 
-<img src="img/resource-group.png" alt="Azure Resource Group Übersicht" width="800">  
+Die Resource Group dient als logischer Container für zusammengehörige Ressourcen und vereinfacht Verwaltung, Lifecycle und Kostenübersicht.
 
-<img src="img/resource-group1.png" alt="Azure Resource Group Detailansicht" width="800">  
+<img src="img/resource-group-menue.png" alt="Azure Resource Group Menü" width="800">
 
----
+<img src="img/resource-group.png" alt="Azure Resource Group Übersicht" width="800">
 
-### Schritt 3 – Storage Account
-**Ziel:** Erstellung eines Speicherkontos zur Ablage von Daten.
+<img src="img/resource-group1.png" alt="Azure Resource Group Detailansicht" width="800">
 
-- Name: `staazurebasics0001`  
-- Leistung: Standard  
-- Redundanz: LRS
+### 3.3 Storage Account
 
-<img src="img/storage-account-overview.png" alt="Azure Storage Account Übersicht" width="800">  
+Anschließend wurde ein Storage Account erstellt.
 
----
+- **Name:** `staazurebasics0001`
+- **Leistung:** Standard
+- **Redundanz:** LRS
 
-### Schritt 4 – VM-Erstellung
-**Ziel:** Bereitstellung einer virtuellen Maschine für Test- und Lernzwecke.
+Damit wurde die grundlegende Bereitstellung eines Azure-Speicherdienstes nachvollzogen.
 
-- OS: Ubuntu 22.04 LTS  
-- Größe: B1s  
-- Authentifizierung: SSH
+<img src="img/storage-account-overview.png" alt="Azure Storage Account Übersicht" width="800">
 
-<img src="img/vm-uebersicht.png" alt="Azure VM Übersicht" width="800">  
+### 3.4 Virtuelle Maschine
 
----
+Für den Compute-Teil des Labs wurde eine kleine Linux-VM bereitgestellt.
 
-### Schritt 5 – Benutzerverwaltung
-**Ziel:** Anlegen eines Benutzers mit minimalen Rechten.
+- **Betriebssystem:** Ubuntu 22.04 LTS
+- **Größe:** B1s
+- **Authentifizierung:** SSH
 
-- Benutzername: `labuser1`  
-- Rolle: Reader
+Ziel war nicht der dauerhafte Betrieb eines Servers, sondern das Verständnis des VM-Deployments und der zugehörigen Konfigurationsschritte.
 
-<img src="img/user.png" alt="Azure Benutzerübersicht" width="800">  
+<img src="img/vm-uebersicht.png" alt="Azure VM Übersicht" width="800">
 
----
+### 3.5 Benutzer und Rollen
 
-### Schritt 6 – Kostenkontrolle
-**Ziel:** Festlegung eines Budgets zur Überwachung der Ausgaben.
+Für die Berechtigungsverwaltung wurde ein Benutzer mit eingeschränkten Rechten angelegt.
 
-- Budget: 5 USD (Azure zeigt Beträge in US-Dollar an)  
-- Abrechnung: monatlich
+- **Benutzer:** `labuser1`
+- **Rolle:** Reader
 
-<img src="img/budget.png" alt="Azure Budgetübersicht" width="800">  
+Damit wurde das Prinzip nachvollzogen, Rechte möglichst restriktiv und rollenbasiert zu vergeben.
 
----
+<img src="img/user.png" alt="Azure Benutzerübersicht" width="800">
 
-## 4. Aufräumen
-Alle erstellten Ressourcen (VM, Storage Account, Resource Group) wurden gelöscht, um Kosten zu vermeiden.
+### 3.6 Kostenkontrolle
 
----
+Zur Kostenüberwachung wurde ein monatliches Budget eingerichtet.
 
-## 5. Fazit
-Dieses Lab bot einen ersten praktischen Einblick in die Verwaltung von Azure-Diensten.  
-Ich habe gelernt:
-- Navigation und Bedienung im Azure-Portal  
-- Erstellen und Verwalten von Resource Groups, Storage Accounts und VMs  
-- Anlegen von Benutzern und Zuweisung von Rollen  
-- Einrichten einer Kostenkontrolle  
+- **Budget:** 5 USD
+- **Intervall:** monatlich
 
-**Persönliche Erkenntnisse:**  
-- Die Menüstruktur von Azure ist umfangreich, aber logisch aufgebaut, wenn man die Suchfunktion nutzt.  
-- Das Kostenlimit ist schnell gesetzt, allerdings sollte man die Standardregion bewusst wählen, um unnötige Kosten zu vermeiden.  
+Ein Budget dient der Überwachung und Benachrichtigung. Es ist kein hartes technisches Ausgabenlimit.
 
-**Dauer:** ca. 1,5 Stunden  
-**Schwierigkeit:** Einsteigerfreundlich, erfordert aber sorgfältiges Arbeiten bei der Konfiguration.  
+<img src="img/budget.png" alt="Azure Budgetübersicht" width="800">
+
+## 4. Cleanup
+
+Nach Abschluss des Labs wurden die temporären Ressourcen wieder entfernt.
+
+Dazu gehörten insbesondere:
+
+- virtuelle Maschine
+- Storage Account
+- Resource Group
+
+Damit wurde sichergestellt, dass aus der Übungsumgebung keine unnötigen laufenden Kosten entstehen.
+
+## 5. Ergebnis
+
+Im Lab wurden folgende Themen praktisch angewendet:
+
+- Navigation im Azure Portal
+- Resource Groups
+- Storage Accounts
+- virtuelle Linux-Maschinen
+- SSH-basierte Authentifizierung
+- Benutzer- und Rollenverwaltung
+- Azure RBAC
+- Cost Management
+- kontrollierter Cleanup
+
+## 6. Lessons Learned
+
+- Eine saubere Resource-Group-Struktur erleichtert Administration und Cleanup.
+- Least Privilege ist auch in kleinen Labs sinnvoll und gut demonstrierbar.
+- Regionen und Ressourcengrößen sollten bewusst gewählt werden.
+- Kostenkontrolle gehört auch bei Testumgebungen zur Administration.
+- Cloud-Labs sollten einen definierten Cleanup-Schritt enthalten.
