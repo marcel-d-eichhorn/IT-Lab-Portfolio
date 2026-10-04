@@ -1,40 +1,48 @@
 # Services & Rollen
 
-## Übersicht
+## Öffentliche Darstellung
 
-| Service | Rolle im Homelab |
+Die konkrete Softwareauswahl des privaten Homelabs ist absichtlich nicht Bestandteil dieses Portfolios.
+
+Für die technische Dokumentation reicht die Betrachtung der Rollen:
+
+| Rolle | Aufgabe |
 | --- | --- |
-| Jellyfin | Medienserver und Streaming |
-| Sonarr | Verwaltung serienbezogener Medien-Workflows |
-| Radarr | Verwaltung filmbezogener Medien-Workflows |
-| Lidarr | Verwaltung musikbezogener Medien-Workflows |
-| Prowlarr | zentrale Indexer-Verwaltung |
-| Bazarr | Untertitelverwaltung |
-| qBittorrent | Download-Client |
-| Portainer | zusätzliche Docker-Webadministration |
-| Watchtower | Container-Update-Automatisierung |
-| Cockpit | Administration des Debian-Hosts |
+| Application Services | Bereitstellung der eigentlichen Anwendungsfunktionen |
+| Management Service | Übersicht und Verwaltung der Container-Umgebung |
+| Maintenance Service | unterstützende Wartungs- und Update-Aufgaben |
+| Network Service | optionale netzwerkbezogene Funktionen |
+| Host Administration | Verwaltung des Debian-Hosts außerhalb der Container |
 
-## Jellyfin
+## Application Services
 
-Jellyfin ist der zentrale Medienserver des Stacks.
-
-Technisch besonders relevant:
+Die Anwendungscontainer sind technisch nach demselben Grundprinzip aufgebaut:
 
 - persistente Konfiguration
-- getrennte Mediendaten
-- GPU-Passthrough über `/dev/dri`
-- Container-Neuerstellung ohne Verlust der Bibliothekskonfiguration
+- getrennte Nutzdaten
+- definierte Netzwerkanbindung
+- reproduzierbare Compose-Konfiguration
+- Container-Neuerstellung ohne Verlust persistenter Daten
+
+Ein ausgewählter Workload verwendet zusätzlich GPU-Passthrough über `/dev/dri`.
 
 ## Management
 
-### Cockpit
+Für die Administration existieren getrennte Ebenen:
 
-Cockpit arbeitet auf Host-Ebene und ergänzt die klassische Shell-Administration.
+### Host-Ebene
 
-### Portainer
+Auf Host-Ebene werden unter anderem verwaltet:
 
-Portainer bietet einen zusätzlichen Blick auf:
+- Storage
+- Systemdienste
+- Logs
+- Ressourcen
+- Docker Runtime
+
+### Container-Ebene
+
+Auf Container-Ebene stehen insbesondere im Fokus:
 
 - Container
 - Images
@@ -42,25 +50,38 @@ Portainer bietet einen zusätzlichen Blick auf:
 - Netzwerke
 - Logs
 
-Die langfristige Zielsetzung ist trotzdem eine nachvollziehbare Compose-basierte Konfiguration statt ausschließlich manueller GUI-Konfiguration.
+Die langfristige Zielsetzung bleibt eine nachvollziehbare Compose-basierte Konfiguration statt ausschließlich manueller GUI-Konfiguration.
 
 ## Update-Strategie
 
-Watchtower wurde als Möglichkeit für automatisierte Container-Updates eingebunden.
+Für Teile des Stacks wurde Update-Automatisierung getestet.
 
-Automatisierung reduziert Routinearbeit, bringt aber auch Risiken mit sich. Für kritische Services sind daher weiterhin wichtig:
+Automatisierung reduziert Routinearbeit, bringt aber auch Risiken mit sich. Für wichtige Services bleiben daher entscheidend:
 
 - persistente Konfigurationen
 - nachvollziehbare Versionen
 - Backups
 - kontrollierte Wiederherstellung
 
-## VPN-Container
+## Instabiler optionaler Dienst
 
-Ein VPN-Container wurde in der Umgebung getestet, lief jedoch in einen Restart-Loop.
+Ein optionaler Container lief zeitweise in einen Restart-Loop.
 
-Statt einen instabilen Container dauerhaft neu starten zu lassen, wurde er zunächst gestoppt. Die Fehleranalyse wird getrennt von den stabil laufenden Services behandelt.
+Statt einen instabilen Container dauerhaft neu starten zu lassen, wurde er zunächst deaktiviert. Die Fehleranalyse wird getrennt von den stabil laufenden Services behandelt.
 
 Das ist im Homelab ein bewusstes Betriebsprinzip:
 
 > Stabiler Grundbetrieb hat Vorrang vor einem zusätzlichen Feature, das die Fehlersuche unnötig erschwert.
+
+## Privacy by Design
+
+Nicht veröffentlicht werden:
+
+- konkrete Produkt- und Service-Namen
+- interne Ports
+- interne IP-Adressen
+- private DNS-Namen
+- produktive Compose-Dateien
+- Secrets und Umgebungsvariablen
+
+Damit bleibt das Portfolio technisch aussagekräftig, ohne die private Homelab-Umgebung unnötig offenzulegen.
