@@ -16,6 +16,13 @@ Ich befinde mich in der Umschulung zum **Fachinformatiker für Systemintegration
 
 ## Featured Projects
 
+### 🐧 Debian Docker Homelab
+Containerisierter Homelab-Server auf Debian mit persistenten Daten, Media-Services, GPU-Passthrough und dokumentiertem Storage-Troubleshooting.
+
+**Technologien:** Debian · Docker · Docker Compose · Cockpit · Jellyfin · Linux Storage · /dev/dri
+
+[Projekt öffnen →](linux-containers/debian-docker-homelab/)
+
 ### 🔐 Repo Security Checker
 Python-basierter Pre-Commit-Scanner für typische Secrets und sensible Daten.
 
@@ -35,7 +42,6 @@ Grundlegendes Azure-Lab mit Resource Group, Storage Account, virtueller Maschine
 Folgende Projekte werden schrittweise dokumentiert und ergänzt:
 
 - **Wazuh SIEM & Detection Engineering**
-- **Debian / Docker Homelab**
 - **Sophos Firewall & Netzwerkarchitektur**
 - **Docker Swarm & High Availability**
 - **Dell PowerEdge / RAID / Serveradministration**
@@ -48,6 +54,8 @@ Folgende Projekte werden schrittweise dokumentiert und ergänzt:
 IT-Lab-Portfolio/
 ├── cloud/
 │   └── azure-basics/
+├── linux-containers/
+│   └── debian-docker-homelab/
 ├── security/
 │   └── repo-security-checker/
 ├── README.md
