@@ -16,6 +16,13 @@ Ich befinde mich in der Umschulung zum **Fachinformatiker für Systemintegration
 
 ## Featured Projects
 
+### 🖥️ Dell PowerEdge T420 – Server Administration Lab
+Praxisprojekt zu Out-of-Band-Management, Hardware-RAID, Remote-Recovery, Hardware-Monitoring und IPMI-basierter Lüfterautomatisierung.
+
+**Technologien:** Dell iDRAC · racadm · IPMI · ipmitool · Hardware RAID · SAS · Debian · systemd
+
+[Projekt öffnen →](infrastructure/dell-poweredge-t420/)
+
 ### 🛡️ Sophos Firewall Homelab
 Modulare Netzwerkarchitektur mit separatem Modem, zentraler Firewall, abstrahierten Netzwerkzonen und dokumentiertem Hardware-Troubleshooting.
 
@@ -49,7 +56,6 @@ Grundlegendes Azure-Lab mit Resource Group, Storage Account, virtueller Maschine
 Folgende Projekte werden schrittweise dokumentiert und ergänzt:
 
 - **Wazuh SIEM & Detection Engineering**
-- **Dell PowerEdge / RAID / Serveradministration**
 - **Sysadmin Troubleshooting Case Studies**
 - **PowerShell- und Python-Automation**
 
@@ -59,6 +65,8 @@ Folgende Projekte werden schrittweise dokumentiert und ergänzt:
 IT-Lab-Portfolio/
 ├── cloud/
 │   └── azure-basics/
+├── infrastructure/
+│   └── dell-poweredge-t420/
 ├── linux-containers/
 │   └── debian-docker-homelab/
 ├── networking/
