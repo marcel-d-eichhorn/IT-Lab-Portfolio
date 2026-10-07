@@ -53,11 +53,7 @@ Grundlegendes Azure-Lab mit Resource Group, Storage Account, virtueller Maschine
 
 ## In Arbeit / geplant
 
-Folgende Projekte werden schrittweise dokumentiert und ergänzt:
-
 - **Wazuh SIEM & Detection Engineering**
-- **Sysadmin Troubleshooting Case Studies**
-- **PowerShell- und Python-Automation**
 
 ## Repository-Struktur
 
